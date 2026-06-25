@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dribble Dash Music Test</title>
+<style>
+body{
+    margin:0;
+    background:black;
+    color:white;
+    font-family:Arial;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+</style>
+</head>
+<body>
 
+<h1>Press Q to Start Music</h1>
+
+<script>
+const bgMusic = new Audio("World Cup Chant(2).mp3");
+bgMusic.loop = true;
+bgMusic.volume = 0.5;
+
+window.addEventListener("keydown", (e) => {
+    if (e.key.toLowerCase() === "q") {
+        bgMusic.currentTime = 0;
+        bgMusic.play();
+        document.querySelector("h1").textContent =
+            "🎵 Music Playing!";
+    }
+});
+</script>
+
+</body>
+</html>
